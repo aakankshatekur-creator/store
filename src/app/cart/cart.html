@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="cart-page">
+<h3 *ngIf="!cartItems.length" > cart is empty </h3>
+  <div *ngIf="cartItems.length">
+    <h3> Cart({{cartItems.length}} item )  --- {{total() | currency : 'USD' }}</h3>
+    <p *ngIf="!couponEligible"> 
+      Add {{ remainingForCoupon | currency: 'USD' }} more to unlock
+      {{ couponValue | currency : 'USD' }} off , use coupon code (code: SAVE10) before checkout.
+    </p>
+    <div>
+      <input type="text" [(ngModel)]="couponCode" placeholder="Enter coupon code " />
+      <button (click)="applyCoupon()">Apply Coupon</button>
+    </div>
+    <p *ngIf="discount">Discount: -{{ discount | currency: 'USD' }}</p>
+    <p><strong>Grand Total:</strong> {{ grandTotal | currency : 'USD' }}</p>
+    <ul class="cart-list">
+      <li class="cart-item" *ngFor='let c of cartItems; let i =index'>
+        <img [src] = "c.img" width="100">
+        <div class="cart-details">
+          <h4>{{c.title}}</h4>
+          <p>Price: $ {{c.price}}</p>
+        {{c.title}} - $ {{c.price}}
+        </div>
+        <button (click)="remove(i)">Remove</button>
+      </li>
+    </ul>
+    <button (click)="ShowCheckOut()"> checkout </button>
+</div>

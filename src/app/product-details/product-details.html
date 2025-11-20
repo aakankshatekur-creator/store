@@ -1,0 +1,57 @@
+<h2 class="product-title">Product Details</h2>
+<div *ngIf="mendress" class="product-container">
+  <img [src]="mendress" alt="Product image" class="product-image">
+  <p class="product-price">40$</p>
+  <h4 class="product-description-title">Product Description:</h4>
+  <p class="product-description">This elegant dress combines comfort and style in one perfect outfit. Made from soft, breathable fabric, it offers a flattering fit that enhances your look effortlessly. Ideal for both casual outings and special occasions, this dress adds a touch of grace and confidence to your wardrobe.</p>
+  <button class="product-button" (click)="cart()">Add to Cart</button>
+  <button class="product-button" (click)="goCart()">Go to Cart</button>
+</div>
+<div *ngIf="womendress" class="product-container">
+  <img [src]="womendress" alt="Women image" class="product-image">
+  <p class="product-price">20$</p>
+  <h4 class="product-description-title">Product Description:</h4>
+  <p class="product-description">This elegant dress combines comfort and style in one perfect outfit. Made from soft, breathable fabric, it offers a flattering fit that enhances your look effortlessly. Ideal for both casual outings and special occasions, this dress adds a touch of grace and confidence to your wardrobe.</p>
+  <button class="product-button" (click)="wcart()">Add to Cart</button>
+  <button class="product-button" (click)="goCart()">Go to Cart</button>
+</div>
+<div *ngIf="book1" class="product-container">
+  <img [src]="book1" alt="Book image" class="product-image">
+  <h3 class="product-name">It Ends With Us</h3>
+  <p class="product-author">by Colleen Hoover</p>
+  <p class="product-price">100$</p>
+  <p class="product-rating">⭐ 4.8/5 (2,500+ reviews)</p>
+  <h4 class="product-description-title">Product Description:</h4>
+  <p class="product-description">A powerful contemporary romance about love, heartbreak, and second chances. Following Lily’s journey between past and present, this novel explores how difficult choices shape relationships and our future.</p>
+  <button class="product-button" (click)="cart1()">Add to Cart</button>
+  <button class="product-button" (click)="goCart()">Go to Cart</button>
+</div>
+<div *ngIf="book2" class="product-container">
+  <img [src]="book2" alt="Book image" class="product-image">
+  <h3 class="product-name">Gone With the Wind</h3>
+  <p class="product-author">by Margaret Mitchell</p>
+  <p class="product-price">120$</p>
+  <p class="product-rating">⭐ 4.7/5 (3,000+ reviews)</p>
+  <h4 class="product-description-title">Product Description:</h4>
+  <p class="product-description">A sweeping historical epic set during the American Civil War, following Scarlett O’Hara’s fight for survival, love, and independence as her world changes forever.</p>
+  <button class="product-button" (click)="cart2()">Add to Cart</button>
+  <button class="product-button" (click)="goCart()">Go to Cart</button>
+</div>
+<div *ngIf="iphone" class="product-container">
+  <img [src]="iphone" alt="iPhone image" class="product-image">
+  <h3 class="product-name">iPhone 16 Series</h3>
+  <p class="product-price">999$</p>
+  <h4 class="product-description-title">Product Description:</h4>
+  <p class="product-description">Experience the latest performance, camera quality, and design with the iPhone 15. With its powerful A16 chip, advanced dual-camera system, and smooth display, this phone delivers exceptional speed and stunning photos in any lighting.</p>
+  <button class="product-button" (click)="Cartphn()">Add to Cart</button>
+  <button class="product-button" (click)="goCart()">Go to Cart</button>
+</div>
+<div *ngIf="mac" class="product-container">
+  <img [src]="mac" alt="MacBook image" class="product-image">
+  <h3 class="product-name">MacBook Pro (M1/M2)</h3>
+  <p class="product-price">1110$</p>
+  <h4 class="product-description-title">Product Description:</h4>
+  <p class="product-description">A premium high-performance laptop designed for coding, editing, designing, studying, and multitasking. With the Apple M-series chip, the MacBook Pro offers blazing-fast performance, a bright Retina display, and long battery life.</p>
+  <button class="product-button" (click)="cartmac()">Add to Cart</button>
+  <button class="product-button" (click)="goCart()">Go to Cart</button>
+</div>

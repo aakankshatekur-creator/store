@@ -1,0 +1,15 @@
+<div class="login-container">
+    <h1 class="login-title">Login Details</h1>
+    <label for="username" class="login-label">User Name:</label>
+    <input id="username" class="login-input" type="text" placeholder="Enter username here" [(ngModel)]="username">
+
+    <label for="password" class="login-label">Password:</label>
+    <input id="password" class="login-input" type="password" placeholder="Enter password here" [(ngModel)]="password">
+
+    <button class="login-button" (click)="login()">Login</button>
+
+    <p *ngIf="error" class="error-message">{{error}}</p>
+
+    <a href="#" class="forgot-password-link">Forgot your password?</a>
+</div>
+

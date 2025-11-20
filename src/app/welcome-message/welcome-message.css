@@ -1,0 +1,39 @@
+/* Styles for the welcome message component */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff; /* Matches the project's background color */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50; /* A deep blue-gray color for elegance */
+    margin-bottom: 1rem;
+}
+
+.welcome-subtitle {
+    font-size: 1.2rem;
+    color: #34495e; /* A slightly lighter blue-gray for contrast */
+    margin-bottom: 2rem;
+}
+
+.welcome-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.welcome-button:hover {
+    background-color: #0056b3;
+}

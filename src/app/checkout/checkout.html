@@ -1,0 +1,55 @@
+<div class="checkout-container">
+  <div class="checkout-steps">
+    <div [class.active]="step === 'address'">1. Address</div>
+    <div [class.active]="step === 'payment'">2. Payment</div>
+<form *ngIf="step==='address'" [formGroup]='addressForm' (ngSubmit)= "submitAddress()">
+    <h1> Shipping Address </h1>
+    <label>First Name </label>
+    <input type="text" placeholder="first name" formControlName="fName">
+    <p class="error" *ngIf="a['fName'].touched && a['fName'].hasError('required')">First name is required.</p>
+    <p class="error" *ngIf="a['fName'].touched && a['fName'].hasError('minlength')">Min 2 characters.</p>
+    
+    <label>last Name</label>
+    <input type="text" placeholder="last name" formControlName="lName">
+    <p class='error' *ngIf="a['lName'].touched && a['lName'].hasError('required')">last name required </p>
+    <label> street Name</label>
+    <input type="text" placeholder="street Name" formControlName="streetName">
+    <p *ngIf="a['streetName'].touched && a['streetName'].hasError('required')"> street name required</p>
+    <label> city </label>
+    <input type="text" placeholder="city" formControlName="city">
+    <p *ngIf="a['city'].touched && a['city'].hasError('required')"> City Required</p>
+    <label> State </label>
+    <input type="text" placeholder="state" formControlName="state">
+    <p *ngIf="a['state'].touched && a['state'].hasError('required')">State required</p>
+    <p *ngIf="a['state'].touched && a['state'].hasError('minlength')">it should be atleast 2 letters</p> 
+    <label> zipcode</label>
+    <input type="text" inputmode="numeric" placeholder="zipcode" formControlName="zipcode">
+    <p *ngIf="a['zipcode'].touched && a['zipcode'].hasError('required')">zipcode required</p>
+    <div class="button-row">
+    <button type="button" (click)="previous()">back</button>
+    <button type="submit" [disabled]="addressForm.invalid">Next</button>
+    </div>
+    <p *ngIf="addressForm.touched && addressForm.invalid"> Enter all the fileds </p>
+  
+  </form>
+  
+  <form *ngIf="step==='payment'" [formGroup]="paymentForm" (ngSubmit)="placeOrder()">
+    <h1> Payment Details </h1>
+    <label> Card Number </label>
+    <input type="number" placeholder="Card Number" formControlName="cardNumber">
+    <p *ngIf="p['cardNumber'].touched && p['cardNumber'].hasError('required')"> card number reuired</p>
+    <label> cvv</label>
+    <input type="number" placeholder="cvv" formControlName="cvv">
+    <p *ngIf="p['cvv'].touched && p['cvv'].hasError('required')">cvv is required</p>
+    <label> exp Date</label>
+    <input type="date" placeholder="exp date" formControlName="expDate">
+    <p *ngIf="p['expDate'].touched && p['expDate'].hasError('required')">cvv is required</p>
+    <br>
+    <div class="button-row">
+    <button type="button" (click)="step='address'">Back</button>
+    <button type="submit" [disabled]="paymentForm.invalid || addressForm.invalid">Place Order</button>
+    </div>
+
+    <p class="error" *ngIf="paymentForm.touched && paymentForm.invalid">all fileds must be entered</p>
+  </form>
+</div>
