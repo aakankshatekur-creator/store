@@ -27,4 +27,7 @@ export class Login {
       this.route.navigateByUrl('/navigation')
     }).catch(err => this.error= String(err));
   }
+  guest(){
+    this.route.navigateByUrl('/navigation')
+  }
 }
