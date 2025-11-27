@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class Apparel {
   constructor( private cartService: carts, private router: Router) { }
 
-  url :string= '/images/mani.jpg';
-  urlw:string='/images/vaishu.jpg';
+  url :string= 'assets/images/mani.jpg';
+  urlw:string='assets/images/vaishu.jpg';
   addWomenCart(){
     this.cartService.add('dresses', 40,this.urlw);
     alert("item added to cart")
